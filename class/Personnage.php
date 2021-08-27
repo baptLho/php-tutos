@@ -3,9 +3,9 @@
 class Personnage
 {
 
-  public $vie = 100;
-  public $atk = 20;
-  private $nom;
+  protected $vie = 100;
+  protected $atk = 20;
+  protected $nom;
 
   public function __construct($nom)
   {
@@ -25,14 +25,43 @@ class Personnage
   {
     return $this->nom;
   }
+  public function setNom($nom)
+  {
+    $this->nom = $nom;
+  }
+
+  public function getVie()
+  {
+    return $this->vie;
+  }
+  public function setVie($vie)
+  {
+    $this->vie = $vie;
+  }
+
+  public function getAtk()
+  {
+    return $this->atk;
+  }
+  public function setAtk($atk)
+  {
+    $this->atk = $atk;
+  }
+
 
   public function mort()
   {
     return $this->vie <= 0;
   }
 
+  protected function empecher_negatif()
+  {
+    if ($this->vie < 0) $this->vie = 0;
+  }
+
   public function attaque($cible)
   {
     $cible->vie -= $this->atk;
+    $cible->empecher_negatif();
   }
 }
