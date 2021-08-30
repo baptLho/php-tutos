@@ -26,16 +26,16 @@ $form = new Form($_POST);
 <!-- ⚠️ ////////////////////////////////////////////////// ⚠️ -->
 <!-- HERITAGE -->
 <?php
-$merlin = new Personnage('Merlin');
-$harry = new Personnage('Harry');
+// $merlin = new Personnage('Merlin');
+// $harry = new Personnage('Harry');
 
 
-$legolas = new Archer('Legolas');
+// $legolas = new Archer('Legolas');
 
-dd($merlin);
-dd($harry);
-dd($legolas);
+// dd($merlin);
+// dd($harry);
+// dd($legolas);
 
 
-$legolas->attaque($harry);
-dd($harry);
+// $legolas->attaque($harry);
+// dd($harry);
