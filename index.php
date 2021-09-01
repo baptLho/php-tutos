@@ -1,41 +1,41 @@
 <?php
-require 'class/form.php';
-require 'class/text.php';
-require 'class/Personnage.php';
-require 'class/Archer.php';
-require 'fonctions.php';
 
-
-$form = new Form($_POST);
-// var_dump(Text::withZero(14));
+use \Tutoriel\HTML\BootstrapForm;
+use \Tutoriel\Autoloader;
 
 ?>
 
-<!-- <form action="" method="post"> -->
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-// echo $form->input('username');
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
 
-// echo $form->input('password');
+<body>
+  <?php
+  require 'class/Autoloader.php';
 
-// echo $form->submit();
+  Autoloader::register();
+  $form = new  BootstrapForm($_POST);
+  ?>
 
-?>
-<!-- </form> -->
+  <form action="" method="post">
+    <?php
 
-<!-- ⚠️ ////////////////////////////////////////////////// ⚠️ -->
-<!-- HERITAGE -->
-<?php
-// $merlin = new Personnage('Merlin');
-// $harry = new Personnage('Harry');
+    echo $form->input('username');
 
+    echo $form->input('password');
 
-// $legolas = new Archer('Legolas');
+    echo $form->submit();
 
-// dd($merlin);
-// dd($harry);
-// dd($legolas);
+    ?>
+  </form>
 
+</body>
 
-// $legolas->attaque($harry);
-// dd($harry);
+</html>

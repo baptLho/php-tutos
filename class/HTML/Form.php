@@ -1,5 +1,7 @@
 <?php
 
+namespace Tutoriel\HTML;
+
 /**
  * class form
  * sert à créer un formulaire rapidement et simplement
@@ -30,7 +32,7 @@ class Form
    * @param $html string code html à entourer
    * @return string
    */
-  private function surround($html)
+  protected function surround($html)
   {
     return "<{$this->surround}>{$html}</$this->surround}>";
   }
@@ -39,7 +41,7 @@ class Form
    * @param $index string index de la valeur à récupérer
    * @return string
    */
-  private function getValue($index)
+  protected function getValue($index)
   {
     return isset($this->data[$index]) ? $this->data[$index] : null;
   }
@@ -62,5 +64,9 @@ class Form
   public function submit()
   {
     return $this->surround("<button type='submit'>Envoyer</button>");
+  }
+  public function date()
+  {
+    return new \DateTime();
   }
 }
